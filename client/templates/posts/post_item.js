@@ -7,9 +7,12 @@
  最后，我们利用 a 标签的特别的 hostname 属性来返回 URL 的域名。
  */
 Template.postItem.helpers({
-    domain: function(){
+    ownPost: function() {
+        return this.userId === Meteor.userId();
+    },
+    domain: function() {
         var a = document.createElement('a');
-        a.href = this.url;//{{#each}} 代码块不仅遍历我们数组，它还在代码块范围内将 this 的值赋予被遍历的对象。
+        a.href = this.url;
         return a.hostname;
     }
-})
+});
