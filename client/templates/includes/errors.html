@@ -1,13 +1,13 @@
-<temlate name="errors">
+<template name="errors">
     <div class="errors">
         {{#each errors}}
-          {{> error}}
+            {{> error}}
         {{/each}}
     </div>
-</temlate>
+</template>
 
 <template name="error">
-    <div class="alert alert-message" role="alert">
+    <div class="alert alert-danger" role="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{message}}
     </div>
