@@ -31,7 +31,7 @@ Template.postSubmit.events({
         Meteor.call('postInsert', post, function(error, result){
             //display error msg
             if(error){
-                return throwError(error.reason);
+                Errors.throw(error.reason);
             }
 
             //display results, redirec the page
